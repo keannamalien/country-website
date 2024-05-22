@@ -1,0 +1,338 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: "Poppins", sans-serif;
+    /* line-height: 1.5rem; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	
+}
+
+p {
+	
+}
+
+
+/* Elements
+--------------------------------------------- */
+ul {
+	
+}
+
+ol {
+	
+}
+
+dl {
+	
+}
+
+figure {
+	
+}
+
+table {
+	
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	
+}
+
+a:hover {
+	
+}
+
+a:focus {
+	
+}
+
+a:active {
+	
+}
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+
+
+/* Header Styles (for all pages)
+--------------------------------------------- */
+.site-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+
+.nav-header li {
+    list-style: none;
+    font-size: 1.2rem;
+    padding: .125rem;
+    font-weight: 500;
+    text-shadow: .0938rem .0938rem 1rem #252323;
+    
+}
+
+.nav-header a {
+    color: #FFFFFF;
+}
+
+#nav-button svg {
+    width: 3rem;
+    height: 3rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 500;
+}
+
+#main-nav-list {
+    background-color: #1f5d68;
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+
+#main-nav-list.toggled {
+    height: 30vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+@media (min-width: 50rem) {
+    
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
+        background: rgb(11,11,11);
+        background: linear-gradient(180deg, rgba(11,11,11,1) 0%, rgba(0,0,0,0) 100%);
+    }
+    
+    #main-nav-list {
+        height: fit-content;
+        padding: 1rem;
+        background-color: transparent;
+    }
+    .nav-header {
+        grid-column: 2/3;
+    }
+    .nav-header ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    
+    .nav-header li {
+        font-size: 1.5rem;
+    }
+    
+    #nav-button {
+        display: none;
+    }
+}
+
+
+
+/* BANNER STYLES (for all pages)*/
+
+.banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.banner::before {
+    content: "";
+    background-image: url("../images/banner-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    filter: brightness(85%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.destinations::before {
+    content: "";
+    background-image: url("../images/destinations-banner.jpg");
+    background-position: 45% center;
+}
+
+.culture::before {
+    content: "";
+    background-image: url("../images/people-dancing.jpg");
+    filter: brightness(70%);
+}
+
+.banner-title {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: .0625rem .0625rem 1rem #252323;
+}
+
+.banner-caption {
+    position: absolute;
+    font-size: 1.5rem;
+    text-align: center;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: 1rem auto;
+    width: fit-content;
+    color: #FFFFFF;
+    text-shadow: .0625rem .0625rem 1rem #252323;
+}
+
+@media (min-width: 50rem) {
+    
+    .banner::before {
+        background-position: 0 5%;
+    }
+    .banner {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .banner-title {
+        font-size: 5rem;
+    }
+    
+    .banner-caption {
+        font-size: 3.5rem;
+        padding-top: 1.5rem;
+    }
+    
+}
+/*-------------------------- HOME PAGE--------------------------- */
+
+/* Main
+--------------------------------------------- */
+
+/* OVERVIEW SECTION */
+
+.overview h2,
+.overview-right h2 {
+font-size: 2rem;
+margin: 0;
+}
+
+.overview,
+.overview-right {
+    text-align: left;
+    padding: 1.5rem;
+}
+
+.read-more {
+     border: solid #252323;
+    padding: .3125rem;
+}
+
+
+@media (min-width: 50rem) {
+
+    .overview {
+        display: flex;
+        width: 85%;
+        margin: 0 auto;
+        padding: 5rem 5rem;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .overview-right {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .home-history-image {
+        max-width: 60%;
+        max-height: 35rem;
+    }
+
+
+    .destination-preview-image,
+    .culture-preview-image {
+        max-width: 45%;
+        max-height: 25rem;
+    }
+
+    .overview-text {
+        padding-left: 4rem;
+    }
+
+    .overview-text-left {
+        padding-left: 0;
+        padding-right: 4rem;
+    }
+
+    .overview-text h2,
+    .overview-text-left h2 {
+        font-size: 3rem;
+    }
+    .overview-text p,
+    .overview-text-left p {
+        font-size: 1.5rem;
+        padding-bottom: 3rem;
+    }
+
+
+}
+
+/* Footer
+--------------------------------------------- */
