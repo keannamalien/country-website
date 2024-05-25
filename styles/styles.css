@@ -43,6 +43,15 @@ p {
 
 /* Elements
 --------------------------------------------- */
+blockquote {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+cite {
+    font-size: 1.5rem;
+}
+
 ul {
 	
 }
@@ -241,12 +250,12 @@ a:active {
 
 @media (min-width: 50rem) {
     
-    .banner::before {
-        background-position: 0 5%;
-    }
     .banner {
         display: flex;
         justify-content: center;
+    }
+    .banner::before {
+        background-position: 0 5%;
     }
     
     .banner-title {
@@ -328,10 +337,65 @@ margin: 0;
     .overview-text p,
     .overview-text-left p {
         font-size: 1.5rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1.5rem;
+    }
+   
+}
+/*-------------------------- DESTINATIONS --------------------------- */
+
+.destination-text {
+    padding: 0.5rem 0 2.5rem 0;
+}
+.destination-text h2,
+.destination-text p {
+    margin: 0;
+}
+
+@media (min-width: 50rem) {
+
+    .destination-images {
+        display: flex;
+        padding: 5rem;
+        gap: 3rem;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 75%;
+        
+    }
+
+    .destination {
+        margin: 0;
+    }
+
+    .destination-text h2 {
+        font-size: 2rem;
+    }
+
+    .destination-text p {
+        font-size: 1.2rem;
     }
 
 
+}
+
+/*-------------------------- CULTURE --------------------------- */
+.culture-food-section h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+.culture-food-section figcaption {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (min-width: 50rem) {
+
+    .culture-section {
+        display: flex;
+        margin: 2rem;
+    }
+
+    
 }
 
 /* Footer
