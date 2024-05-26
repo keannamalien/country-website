@@ -46,10 +46,10 @@ p {
 blockquote {
     font-style: italic;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 cite {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 ul {
@@ -68,8 +68,23 @@ figure {
 	
 }
 
-table {
-	
+table { 
+	margin: 1.5rem;
+}
+
+th,
+td:first-child {
+    background-color: #dbedfd;
+}
+
+table, th, td {
+    border: .0625rem solid #dbedfd;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: .3125rem;
 }
 
 /* Links
@@ -222,6 +237,12 @@ a:active {
     filter: brightness(70%);
 }
 
+.credits::before {
+    content: "";
+    background-image: url("../images/credits-banner.jpeg");
+    filter: brightness(70%);
+}
+
 .banner-title {
     position: absolute;
     top: 35%;
@@ -290,6 +311,10 @@ margin: 0;
 .read-more {
      border: solid #252323;
     padding: .3125rem;
+}
+
+.seasons-table {
+    overflow-x: auto;
 }
 
 
@@ -395,8 +420,38 @@ margin: 0;
         margin: 2rem;
     }
 
-    
+    .food-images-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 20rem));
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    .culture-food-section h2 {
+        font-size: 3rem;
+    }
+    .culture-food-section figure {
+       margin: 0 auto;
+       max-width: 100%;
+        
+    }
+    .culture-food-section img {
+        max-width: 100%;
+        height: 10rem;
+
+    }
+}       
+
+@media (min-width: 56.25rem) {
+.culture-food-section {
+    display: flex;
+}
+.culture-food-section h2 {
+    margin: 0;
 }
 
+
+
+}
 /* Footer
 --------------------------------------------- */
