@@ -1,0 +1,585 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: "Poppins", sans-serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	
+}
+
+p {
+	
+}
+
+
+/* Elements
+--------------------------------------------- */
+blockquote {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #890000;
+}
+cite {
+    font-size: 1rem;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+ul {
+	
+}
+
+ol {
+	
+}
+
+dl {
+	
+}
+
+figure {
+	
+}
+
+table { 
+	margin: 1.5rem;
+}
+
+th,
+td:first-child {
+    background-color: #dbedfd;
+}
+
+table, th, td {
+    border: .0625rem solid #dbedfd;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: .3125rem;
+}
+
+@media (min-width: 50rem) {
+    table {
+        margin: 0 auto;
+    }
+
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	text-decoration: none;
+    color: #252323;
+}
+
+a:visited {
+	
+}
+
+a:hover {
+	
+}
+
+a:focus {
+	
+}
+
+a:active {
+	
+}
+
+.read-more:hover {
+    background-color: #252323;
+    color: #FFFFFF;
+}
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+
+
+/* Header Styles (for all pages)
+--------------------------------------------- */
+.site-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    
+}
+
+.logo { 
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 450;
+
+}
+
+.nav-header li {
+    list-style: none;
+    font-size: 1.2rem;
+    padding: .125rem;
+    font-weight: 500;
+    text-shadow: .0938rem .0938rem 1rem #252323;
+    
+}
+
+.nav-header a {
+    color: #FFFFFF;
+}
+
+#nav-button svg {
+    width: 3rem;
+    height: 3rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 600;
+
+}
+
+#main-nav-list {
+    background-color: #3a8281;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    /* transition: height .5s ease; */
+    text-align: center;
+    z-index: 500;
+}
+
+#main-nav-list.toggled {
+    height: 30vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+@media (min-width: 50rem) {
+    
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
+        background: rgb(11,11,11);
+        background: linear-gradient(180deg, rgba(11,11,11,1) 0%, rgba(0,0,0,0) 100%);
+    }
+    
+    #main-nav-list {
+        height: fit-content;
+        padding: 1rem;
+        background-color: transparent;
+    }
+    .nav-header {
+        grid-column: 2/3;
+    }
+    .nav-header ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    
+    .nav-header li {
+        font-size: 1.5rem;
+    }
+    
+    #nav-button {
+        display: none;
+    }
+}
+
+
+
+/* BANNER STYLES (for all pages)*/
+
+.banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.banner::before {
+    content: "";
+    background-image: url("../images/banner-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    filter: brightness(85%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.destinations::before {
+    content: "";
+    background-image: url("../images/destinations-banner.jpg");
+    background-position: 45% center;
+}
+
+.culture::before {
+    content: "";
+    background-image: url("../images/people-dancing.jpg");
+    filter: brightness(70%);
+}
+
+.credits::before {
+    content: "";
+    background-image: url("../images/credits-banner.jpeg");
+    filter: brightness(70%);
+}
+
+.banner-title {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: .0625rem .0625rem 1rem #252323;
+}
+
+.banner-caption {
+    position: absolute;
+    font-size: 1.5rem;
+    text-align: center;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: 1rem auto;
+    width: fit-content;
+    color: #FFFFFF;
+    text-shadow: .0625rem .0625rem 1rem #252323;
+}
+
+@media (min-width: 50rem) {
+    
+    .banner {
+        display: flex;
+        justify-content: center;
+    }
+    .banner::before {
+        background-position: 0 5%;
+    }
+    
+    .banner-title {
+        font-size: 5rem;
+    }
+    
+    .banner-caption {
+        font-size: 3.5rem;
+        padding-top: 1.5rem;
+    }
+    
+}
+/*-------------------------- HOME PAGE--------------------------- */
+
+/* Main
+--------------------------------------------- */
+
+/* OVERVIEW SECTION */
+
+.overview h2,
+.overview-right h2 {
+font-size: 2rem;
+margin: 0;
+}
+
+.overview,
+.overview-right {
+    text-align: left;
+    padding: 1.5rem;
+}
+
+.read-more {
+     border: solid #252323;
+    padding: .3125rem;
+}
+
+.seasons-table {
+    overflow-x: auto;
+}
+
+.contact-form {
+max-width: 80%;
+padding: .25rem;
+/* background: #FFFFFF; */
+margin: 2rem auto;
+}
+
+.contact-form h2 {
+
+}
+
+.contact-form .input-box {
+    position: relative;
+    width: 100%;
+    margin-top: .625rem;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box textarea {
+    width: 100%;
+    padding: .3125rem 0;
+    font-size: 1rem;
+    margin: .625rem 0;
+    border: none;
+    border-bottom: .125rem solid #252323;
+    outline: none;
+    resize: none;
+}
+.contact-form .input-box label {
+position: absolute;
+left: 0;
+padding: .3125rem 0;
+font-size: 1rem;
+margin: .625rem 0;
+pointer-events: none;
+transition: 0.5s;
+color: #666;
+}
+
+.contact-form .input-box input:focus ~ label,
+.contact-form .input-box input:valid ~ label,
+.contact-form .input-box textarea:valid ~ label, 
+.contact-form .input-box textarea:valid ~ label {
+    color: #e91e63;
+    font-size: .75rem;
+    transform: translateY(-20px);
+}
+.contact-form .input-box input[type="submit"] {
+    width: 6.25rem;
+    background: #3a8281;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.125rem;
+
+}
+
+
+@media (min-width: 50rem) {
+
+    .overview {
+        display: flex;
+        width: 85%;
+        margin: 0 auto;
+        padding: 5rem 5rem;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .overview-right {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .home-history-image {
+        max-width: 60%;
+        max-height: 35rem;
+    }
+
+
+    .destination-preview-image,
+    .culture-preview-image {
+        max-width: 45%;
+        max-height: 25rem;
+    }
+
+    .overview-text {
+        padding-left: 4rem;
+    }
+
+    .overview-text-left {
+        padding-left: 0;
+        padding-right: 4rem;
+    }
+
+    .overview-text h2,
+    .overview-text-left h2 {
+        font-size: 3rem;
+    }
+    .overview-text p,
+    .overview-text-left p {
+        font-size: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 5rem;
+        max-width: 40%;
+    }
+   
+}
+/*-------------------------- DESTINATIONS --------------------------- */
+
+.destination-text {
+    padding: 0.5rem 0 2.5rem 0;
+}
+.destination-text h2,
+.destination-text p {
+    margin: 0;
+}
+
+@media (min-width: 50rem) {
+
+    .destination-images {
+        display: flex;
+        padding: 5rem;
+        gap: 3rem;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 75%;
+        
+    }
+
+    .destination {
+        margin: 0;
+    }
+
+    .destination-text h2 {
+        font-size: 2rem;
+    }
+
+    .destination-text p {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+/*-------------------------- CULTURE --------------------------- */
+.culture-food-section h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+.culture-food-section figcaption {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (min-width: 50rem) {
+
+    .culture-section {
+        display: flex;
+        margin: 2rem 2rem 5rem 2rem;
+    }
+
+    .culture-section img,
+    .culture-section video {
+        object-fit: cover;
+        height: 15rem;
+    }
+
+    .food-images-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 20rem));
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    .culture-food-section h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .culture-food-section figure {
+       margin: 0 auto;
+       max-width: 100%;
+        
+    }
+    .culture-food-section img {
+        max-width: 100%;
+        height: 10rem;
+
+    }
+}       
+
+@media (min-width: 56.25rem) {
+.culture-food-section {
+    display: flex;
+}
+.culture-food-section h2 {
+    margin: 0;
+}
+
+}
+/*-------------------------- CREDITS --------------------------- */
+.link-credits article {
+   background-color: #dbedfd;
+   border-radius: .625rem;
+   max-width: 80%;
+   margin: 1rem auto;
+   padding: 1rem;
+}
+.link-credits h2 {
+    text-align: center;
+}
+
+.link-credits ul {
+    padding: 0 2rem;
+}
+
+@media (min-width: 50rem) {
+    .link-credits article {
+        max-width: 50%;
+    }
+}
+
+/* Footer
+--------------------------------------------- */
+footer {
+    text-align: center;
+    margin-top: 5rem;
+    /* background-color: #a4b3c0; */
+}
