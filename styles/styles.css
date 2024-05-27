@@ -24,7 +24,7 @@
 --------------------------------------------- */
 body {
 	font-family: "Poppins", sans-serif;
-    line-height: 1.5rem;
+    line-height: 1.5;
 }
 
 h1,
@@ -47,9 +47,15 @@ blockquote {
     font-style: italic;
     font-weight: 600;
     font-size: 1rem;
+    color: #890000;
 }
 cite {
     font-size: 1rem;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 ul {
@@ -87,10 +93,18 @@ th, td {
     padding: .3125rem;
 }
 
+@media (min-width: 50rem) {
+    table {
+        margin: 0 auto;
+    }
+
+}
+
 /* Links
 --------------------------------------------- */
 a {
 	text-decoration: none;
+    color: #252323;
 }
 
 a:visited {
@@ -107,6 +121,11 @@ a:focus {
 
 a:active {
 	
+}
+
+.read-more:hover {
+    background-color: #252323;
+    color: #FFFFFF;
 }
 
 
@@ -130,8 +149,18 @@ a:active {
     right: 0;
     left: 0;
     z-index: 100;
+    
 }
 
+.logo { 
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 450;
+
+}
 
 .nav-header li {
     list-style: none;
@@ -151,16 +180,20 @@ a:active {
     height: 3rem;
     padding-right: 1rem;
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 500;
+    top: 1rem;
+    right: 1rem;
+    z-index: 600;
+
 }
 
 #main-nav-list {
-    background-color: #1f5d68;
+    background-color: #3a8281;
     height: 0;
     overflow: hidden;
-    transition: height .5s ease;
+    position: relative;
+    /* transition: height .5s ease; */
+    text-align: center;
+    z-index: 500;
 }
 
 #main-nav-list.toggled {
@@ -317,6 +350,64 @@ margin: 0;
     overflow-x: auto;
 }
 
+.contact-form {
+max-width: 80%;
+padding: .25rem;
+/* background: #FFFFFF; */
+margin: 2rem auto;
+}
+
+.contact-form h2 {
+
+}
+
+.contact-form .input-box {
+    position: relative;
+    width: 100%;
+    margin-top: .625rem;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box textarea {
+    width: 100%;
+    padding: .3125rem 0;
+    font-size: 1rem;
+    margin: .625rem 0;
+    border: none;
+    border-bottom: .125rem solid #252323;
+    outline: none;
+    resize: none;
+}
+.contact-form .input-box label {
+position: absolute;
+left: 0;
+padding: .3125rem 0;
+font-size: 1rem;
+margin: .625rem 0;
+pointer-events: none;
+transition: 0.5s;
+color: #666;
+}
+
+.contact-form .input-box input:focus ~ label,
+.contact-form .input-box input:valid ~ label,
+.contact-form .input-box textarea:valid ~ label, 
+.contact-form .input-box textarea:valid ~ label {
+    color: #e91e63;
+    font-size: .75rem;
+    transform: translateY(-20px);
+}
+.contact-form .input-box input[type="submit"] {
+    width: 6.25rem;
+    background: #3a8281;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.125rem;
+
+}
+
 
 @media (min-width: 50rem) {
 
@@ -363,6 +454,11 @@ margin: 0;
     .overview-text-left p {
         font-size: 1.5rem;
         padding-bottom: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 5rem;
+        max-width: 40%;
     }
    
 }
@@ -417,7 +513,13 @@ margin: 0;
 
     .culture-section {
         display: flex;
-        margin: 2rem;
+        margin: 2rem 2rem 5rem 2rem;
+    }
+
+    .culture-section img,
+    .culture-section video {
+        object-fit: cover;
+        height: 15rem;
     }
 
     .food-images-container {
@@ -429,6 +531,7 @@ margin: 0;
     }
     .culture-food-section h2 {
         font-size: 3rem;
+        line-height: 3rem;
     }
     .culture-food-section figure {
        margin: 0 auto;
@@ -454,6 +557,7 @@ margin: 0;
 /*-------------------------- CREDITS --------------------------- */
 .link-credits article {
    background-color: #dbedfd;
+   border-radius: .625rem;
    max-width: 80%;
    margin: 1rem auto;
    padding: 1rem;
@@ -466,6 +570,16 @@ margin: 0;
     padding: 0 2rem;
 }
 
+@media (min-width: 50rem) {
+    .link-credits article {
+        max-width: 50%;
+    }
+}
 
 /* Footer
 --------------------------------------------- */
+footer {
+    text-align: center;
+    margin-top: 5rem;
+    /* background-color: #a4b3c0; */
+}

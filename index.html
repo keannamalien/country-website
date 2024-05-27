@@ -22,6 +22,10 @@
     <div class="site-wrapper">
       <header class="site-header">
         <nav class="nav-header">
+          <a class="screen-reader-text" href="#site-main">Skip to content</a>
+          <div class="logo">
+            <img src="images/country-logo.png" alt="logo" />
+          </div>
           <div id="nav-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +50,7 @@
           <p class="banner-caption">Pearl of the Orient Seas</p>
         </section>
 
-        <section>
+        <section id="site-main">
           <article class="overview">
             <img
               class="home-history-image"
@@ -142,9 +146,30 @@
             </tbody>
           </table>
         </section>
+
+        <section class="contact-form">
+          <form>
+            <legend>Send us a message</legend>
+            <div class="input-box">
+              <input type="text" name="" required="required" />
+              <label>Full Name</label>
+            </div>
+            <div class="input-box">
+              <input type="text" name="" required="required" />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <textarea required="required"></textarea>
+              <label>Type your message here</label>
+            </div>
+            <div class="input-box">
+              <input type="submit" name="" value="Send" />
+            </div>
+          </form>
+        </section>
       </main>
       <footer>
-        <p>&copy; Keanna Bayaua 2024 (for educational purpose only)</p>
+        <p>&copy; Keanna Bayaua 2024 (For educational purposes only)</p>
       </footer>
     </div>
   </body>
