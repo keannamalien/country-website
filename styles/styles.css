@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
+/*--------------------------------------------------
 >>> TABLE OF CONTENTS:
-----------------------------------------------------------------
+---------------------------------------------------
 # Generic (CALLED IN ANOTHER FILE)
 	- Normalize
 	- Box sizing
@@ -9,16 +9,16 @@
 	- Typography
 	- Elements
 	- Links
-# Layouts
 # Components
 	- Header
 	- Main
 	- Footer
---------------------------------------------------------------*/
+-----------------------------------------------*/
 
-/*--------------------------------------------------------------
+/*------------------------------------------------
 # Base
---------------------------------------------------------------*/
+----------------------------------------------*/
+
 
 /* Typography
 --------------------------------------------- */
@@ -27,17 +27,13 @@ body {
     line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	
+.screen-reader-only { 
+    display: none;
 }
 
-p {
-	
+h1,
+h2 {
+    text-transform: uppercase;
 }
 
 
@@ -47,35 +43,16 @@ blockquote {
     font-style: italic;
     font-weight: 600;
     font-size: 1rem;
-    color: #890000;
+    color: #B30100;
 }
+
 cite {
     font-size: 1rem;
 }
 
-legend {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-ul {
-	
-}
-
-ol {
-	
-}
-
-dl {
-	
-}
-
-figure {
-	
-}
-
 table { 
-	margin: 1.5rem;
+    margin: 0 auto;
+    max-width: 90%;
 }
 
 th,
@@ -84,7 +61,7 @@ td:first-child {
 }
 
 table, th, td {
-    border: .0625rem solid #dbedfd;
+    border: .0625rem solid #add6fa;
     border-collapse: collapse;
     text-align: center;
 }
@@ -93,9 +70,10 @@ th, td {
     padding: .3125rem;
 }
 
-@media (min-width: 50rem) {
-    table {
-        margin: 0 auto;
+@media (min-width: 50em) {
+    th, td {
+       font-size: 1.2rem;
+       padding: 1rem;
     }
 
 }
@@ -105,43 +83,39 @@ th, td {
 a {
 	text-decoration: none;
     color: #252323;
+    text-transform: uppercase;
 }
 
-a:visited {
-	
+a:hover,
+a:active,
+.nav-header a:hover , 
+.nav-header a:active {
+	color: #ff2a2a;
 }
 
-a:hover {
-	
-}
-
-a:focus {
-	
-}
-
-a:active {
-	
+a:focus-visible {
+    outline: dotted #ff2a2a;
+    outline-width: 0.2rem;  
 }
 
 .read-more:hover {
-    background-color: #252323;
+    background-color: #B30000;
+    border-color: #B30000;
     color: #FFFFFF;
 }
 
 
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-
-
-
-/*--------------------------------------------------------------
+/*----------------------------------------------
 # Components
---------------------------------------------------------------*/
+-----------------------------------------------*/
 
+.site-wrapper {
+    max-width: 125rem;
+    margin: 0 auto;
+    min-height: 100vh;
+}
 
-
-/* Header Styles (for all pages)
+/* HEADER STYLES (for all pages)
 --------------------------------------------- */
 .site-header {
     position: absolute;
@@ -158,7 +132,7 @@ a:active {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    z-index: 450;
+    z-index: 700;
 
 }
 
@@ -166,9 +140,7 @@ a:active {
     list-style: none;
     font-size: 1.2rem;
     padding: .125rem;
-    font-weight: 500;
-    text-shadow: .0938rem .0938rem 1rem #252323;
-    
+    font-weight: 500; 
 }
 
 .nav-header a {
@@ -177,38 +149,46 @@ a:active {
 
 #nav-button svg {
     width: 3rem;
-    height: 3rem;
+    height: 4rem;
     padding-right: 1rem;
     position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 600;
-
 }
 
 #main-nav-list {
-    background-color: #3a8281;
+    background-color: #252525;
     height: 0;
     overflow: hidden;
     position: relative;
-    /* transition: height .5s ease; */
-    text-align: center;
     z-index: 500;
+    text-align: center;
 }
 
 #main-nav-list.toggled {
-    height: 30vh;
+    height: 35vh;
     margin: 0;
-    padding: 1rem;
+    padding: 6rem 1rem 1rem 1rem;
 }
 
-@media (min-width: 50rem) {
+#main-nav-list li {
+    padding: .25rem;
+}
+
+@media (min-width: 50em) {
     
     .site-header {
         display: grid;
-        grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
+        grid-template-columns: 1fr minmax(auto, 50rem) 1fr; 
         background: rgb(11,11,11);
-        background: linear-gradient(180deg, rgba(11,11,11,1) 0%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(180deg, rgba(11,11,11,0.6531206232492996) 42%, rgba(8,8,8,0.4710477941176471) 73%, rgba(8,8,8,0.0004595588235294379) 100%);
+        max-width: 125rem;
+        margin: 0 auto;
+    }
+    .logo { 
+        width: 5rem;
+        height: 5rem;
     }
     
     #main-nav-list {
@@ -216,9 +196,11 @@ a:active {
         padding: 1rem;
         background-color: transparent;
     }
+
     .nav-header {
         grid-column: 2/3;
     }
+
     .nav-header ul {
         display: flex;
         justify-content: space-evenly;
@@ -233,8 +215,6 @@ a:active {
         display: none;
     }
 }
-
-
 
 /* BANNER STYLES (for all pages)*/
 
@@ -302,12 +282,13 @@ a:active {
     text-shadow: .0625rem .0625rem 1rem #252323;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 50em) {
     
     .banner {
         display: flex;
         justify-content: center;
     }
+
     .banner::before {
         background-position: 0 5%;
     }
@@ -322,7 +303,7 @@ a:active {
     }
     
 }
-/*-------------------------- HOME PAGE--------------------------- */
+/*---------------- HOME PAGE------------------ */
 
 /* Main
 --------------------------------------------- */
@@ -346,20 +327,19 @@ margin: 0;
     padding: .3125rem;
 }
 
-.seasons-table {
-    overflow-x: auto;
+/* TABLE SECTION */
+
+.seasons-table h2 {
+    text-align: center;
 }
 
+/* CONTACT FORM SECTION */
 .contact-form {
-max-width: 80%;
-padding: .25rem;
-/* background: #FFFFFF; */
-margin: 2rem auto;
+    max-width: 80%;
+    padding: .25rem;
+    margin: 2rem auto;
 }
 
-.contact-form h2 {
-
-}
 
 .contact-form .input-box {
     position: relative;
@@ -378,38 +358,41 @@ margin: 2rem auto;
     outline: none;
     resize: none;
 }
+
 .contact-form .input-box label {
-position: absolute;
-left: 0;
-padding: .3125rem 0;
-font-size: 1rem;
-margin: .625rem 0;
-pointer-events: none;
-transition: 0.5s;
-color: #666;
+    position: absolute;
+    left: 0;
+    padding: .3125rem 0;
+    font-size: 1rem;
+    margin: .625rem 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #575757;
 }
 
 .contact-form .input-box input:focus ~ label,
 .contact-form .input-box input:valid ~ label,
 .contact-form .input-box textarea:valid ~ label, 
 .contact-form .input-box textarea:valid ~ label {
-    color: #e91e63;
+    color: #B30000;
     font-size: .75rem;
     transform: translateY(-20px);
 }
+
 .contact-form .input-box input[type="submit"] {
     width: 6.25rem;
-    background: #3a8281;
-    color: #fff;
+    background: #B30000;
+    color: #ffffff;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: .625rem ;
     font-size: 1.125rem;
-
 }
 
 
-@media (min-width: 50rem) {
+@media (min-width: 50em) {
+
+    /* OVERVIEW SECTION */
 
     .overview {
         display: flex;
@@ -450,11 +433,14 @@ color: #666;
     .overview-text-left h2 {
         font-size: 3rem;
     }
+
     .overview-text p,
     .overview-text-left p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding-bottom: 1.5rem;
     }
+
+    /* CONTACT FORM SECTION */
 
     .contact-form {
         padding: 5rem;
@@ -462,17 +448,18 @@ color: #666;
     }
    
 }
-/*-------------------------- DESTINATIONS --------------------------- */
+/*------------- DESTINATIONS ---------------- */
 
 .destination-text {
     padding: 0.5rem 0 2.5rem 0;
 }
+
 .destination-text h2,
 .destination-text p {
     margin: 0;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 50em) {
 
     .destination-images {
         display: flex;
@@ -481,7 +468,7 @@ color: #666;
         justify-content: center;
         margin: 0 auto;
         max-width: 75%;
-        
+
     }
 
     .destination {
@@ -499,17 +486,19 @@ color: #666;
 
 }
 
-/*-------------------------- CULTURE --------------------------- */
+/*---------------- CULTURE-------------------- */
 .culture-food-section h2 {
     text-align: center;
     font-size: 2rem;
 }
+
 .culture-food-section figcaption {
     font-size: 1.2rem;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 50em) {
 
     .culture-section {
         display: flex;
@@ -520,6 +509,7 @@ color: #666;
     .culture-section video {
         object-fit: cover;
         height: 15rem;
+        width: 26rem;
     }
 
     .food-images-container {
@@ -528,16 +518,20 @@ color: #666;
         gap: 1rem;
         margin: 0 auto;
         max-width: 80%;
+        padding-right: 3rem;
     }
+
     .culture-food-section h2 {
         font-size: 3rem;
         line-height: 3rem;
     }
+
     .culture-food-section figure {
        margin: 0 auto;
        max-width: 100%;
         
     }
+
     .culture-food-section img {
         max-width: 100%;
         height: 10rem;
@@ -545,16 +539,16 @@ color: #666;
     }
 }       
 
-@media (min-width: 56.25rem) {
-.culture-food-section {
+@media (min-width: 56.25em) {
+    .culture-food-section {
     display: flex;
-}
-.culture-food-section h2 {
-    margin: 0;
-}
+    }
 
+    .culture-food-section h2 {
+    margin: 0;
+    }
 }
-/*-------------------------- CREDITS --------------------------- */
+/*----------------- CREDITS ------------------- */
 .link-credits article {
    background-color: #dbedfd;
    border-radius: .625rem;
@@ -562,24 +556,37 @@ color: #666;
    margin: 1rem auto;
    padding: 1rem;
 }
+
 .link-credits h2 {
     text-align: center;
 }
 
 .link-credits ul {
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
-@media (min-width: 50rem) {
+.link-credits a {
+    text-transform: none;
+}
+
+@media (min-width: 50em) {
     .link-credits article {
         max-width: 50%;
+        padding-left: 2rem;
+    }
+
+    .link-credits ul {
+        padding: 0 3rem;
+    }
+    
+    .link-credits a {
+        font-size: 1.2rem;
     }
 }
 
-/* Footer
---------------------------------------------- */
+/* -----------------Footer------------------ */
 footer {
     text-align: center;
     margin-top: 5rem;
-    /* background-color: #a4b3c0; */
+    padding: 0 1.5rem;
 }
