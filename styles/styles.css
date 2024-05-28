@@ -27,11 +27,16 @@ body {
     line-height: 1.5;
 }
 
-.main-title { 
-    text-align: center;
-    padding: 1rem;
-    font-size: 2rem;
+.screen-reader-only { 
+    display: none;
 }
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+
 /* Elements
 --------------------------------------------- */
 blockquote {
@@ -75,6 +80,7 @@ th, td {
 a {
 	text-decoration: none;
     color: #252323;
+    text-transform: uppercase;
 }
 
 a:hover,
@@ -171,9 +177,9 @@ a:focus-visible {
     
     .site-header {
         display: grid;
-        grid-template-columns: 1fr minmax(auto, 50rem) 1fr;
+        grid-template-columns: 1fr minmax(auto, 50rem) 1fr; 
         background: rgb(11,11,11);
-        background: linear-gradient(180deg, rgba(11,11,11,1) 0%, rgba(8,8,8,0.6279105392156863) 45%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(180deg, rgba(11,11,11,0.6531206232492996) 42%, rgba(8,8,8,0.4710477941176471) 73%, rgba(8,8,8,0.0004595588235294379) 100%);
         max-width: 125rem;
         margin: 0 auto;
     }
@@ -478,6 +484,7 @@ color: #575757;
 .culture-food-section figcaption {
     font-size: 1.2rem;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 @media (min-width: 50em) {
