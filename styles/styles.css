@@ -45,12 +45,14 @@ blockquote {
     font-size: 1rem;
     color: #B30100;
 }
+
 cite {
     font-size: 1rem;
 }
 
 table { 
-	margin: 1.5rem;
+    margin: 0 auto;
+    max-width: 90%;
 }
 
 th,
@@ -59,7 +61,7 @@ td:first-child {
 }
 
 table, th, td {
-    border: .0625rem solid #dbedfd;
+    border: .0625rem solid #add6fa;
     border-collapse: collapse;
     text-align: center;
 }
@@ -69,8 +71,9 @@ th, td {
 }
 
 @media (min-width: 50em) {
-    table {
-        margin: 0 auto;
+    th, td {
+       font-size: 1.2rem;
+       padding: 1rem;
     }
 
 }
@@ -112,7 +115,7 @@ a:focus-visible {
     min-height: 100vh;
 }
 
-/* Header Styles (for all pages)
+/* HEADER STYLES (for all pages)
 --------------------------------------------- */
 .site-header {
     position: absolute;
@@ -193,9 +196,11 @@ a:focus-visible {
         padding: 1rem;
         background-color: transparent;
     }
+
     .nav-header {
         grid-column: 2/3;
     }
+
     .nav-header ul {
         display: flex;
         justify-content: space-evenly;
@@ -283,6 +288,7 @@ a:focus-visible {
         display: flex;
         justify-content: center;
     }
+
     .banner::before {
         background-position: 0 5%;
     }
@@ -320,18 +326,18 @@ margin: 0;
      border: solid #252323;
     padding: .3125rem;
 }
+
 /* TABLE SECTION */
-.seasons-table {
-    overflow-x: auto;
-}
+
 .seasons-table h2 {
     text-align: center;
 }
+
 /* CONTACT FORM SECTION */
 .contact-form {
-max-width: 80%;
-padding: .25rem;
-margin: 2rem auto;
+    max-width: 80%;
+    padding: .25rem;
+    margin: 2rem auto;
 }
 
 
@@ -352,15 +358,16 @@ margin: 2rem auto;
     outline: none;
     resize: none;
 }
+
 .contact-form .input-box label {
-position: absolute;
-left: 0;
-padding: .3125rem 0;
-font-size: 1rem;
-margin: .625rem 0;
-pointer-events: none;
-transition: 0.5s;
-color: #575757;
+    position: absolute;
+    left: 0;
+    padding: .3125rem 0;
+    font-size: 1rem;
+    margin: .625rem 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #575757;
 }
 
 .contact-form .input-box input:focus ~ label,
@@ -371,6 +378,7 @@ color: #575757;
     font-size: .75rem;
     transform: translateY(-20px);
 }
+
 .contact-form .input-box input[type="submit"] {
     width: 6.25rem;
     background: #B30000;
@@ -425,6 +433,7 @@ color: #575757;
     .overview-text-left h2 {
         font-size: 3rem;
     }
+
     .overview-text p,
     .overview-text-left p {
         font-size: 1.2rem;
@@ -444,6 +453,7 @@ color: #575757;
 .destination-text {
     padding: 0.5rem 0 2.5rem 0;
 }
+
 .destination-text h2,
 .destination-text p {
     margin: 0;
@@ -481,6 +491,7 @@ color: #575757;
     text-align: center;
     font-size: 2rem;
 }
+
 .culture-food-section figcaption {
     font-size: 1.2rem;
     font-weight: 600;
@@ -509,15 +520,18 @@ color: #575757;
         max-width: 80%;
         padding-right: 3rem;
     }
+
     .culture-food-section h2 {
         font-size: 3rem;
         line-height: 3rem;
     }
+
     .culture-food-section figure {
        margin: 0 auto;
        max-width: 100%;
         
     }
+
     .culture-food-section img {
         max-width: 100%;
         height: 10rem;
@@ -529,6 +543,7 @@ color: #575757;
     .culture-food-section {
     display: flex;
     }
+
     .culture-food-section h2 {
     margin: 0;
     }
@@ -541,12 +556,17 @@ color: #575757;
    margin: 1rem auto;
    padding: 1rem;
 }
+
 .link-credits h2 {
     text-align: center;
 }
 
 .link-credits ul {
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+.link-credits a {
+    text-transform: none;
 }
 
 @media (min-width: 50em) {
@@ -554,7 +574,11 @@ color: #575757;
         max-width: 50%;
         padding-left: 2rem;
     }
-    .link-credits li, 
+
+    .link-credits ul {
+        padding: 0 3rem;
+    }
+    
     .link-credits a {
         font-size: 1.2rem;
     }
