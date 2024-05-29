@@ -487,6 +487,7 @@ margin: 0;
 }
 
 /*---------------- CULTURE-------------------- */
+
 .culture-food-section h2 {
     text-align: center;
     font-size: 2rem;
@@ -540,6 +541,12 @@ margin: 0;
 }       
 
 @media (min-width: 56.25em) {
+
+    .culture-main-wrapper {
+        max-width: 90rem;
+        margin: 0 auto;
+    }
+
     .culture-food-section {
     display: flex;
     }
